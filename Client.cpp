@@ -11,10 +11,10 @@
  */
 Client::Client() {
     t = new Tabla();
-    ipC = const_cast<char *>("localhost");
-    ipL = const_cast<char *>("localhost");
-    portC = const_cast<char *>("9090");
-    portL = const_cast<char *>("20000");
+    ipLegos = const_cast<char *>("localhost");
+    ipLuces = const_cast<char *>("localhost");
+    portLegos = const_cast<char *>("2004");
+    portLuces = const_cast<char *>("2003");
 }
 
 /**
@@ -181,16 +181,16 @@ void Client::prepararMensaje(string redDest, string msj) {
         }
     }
 
-    if (t->idSalida[i] == "165.8.6.25") { //Se envia a carritos
-        socketC(ipC, portC, msj);
+    if (t->idSalida[i] == "201.6.0.1") { //Se envia a legos
+        socketC(ipLegos, portLegos, msj);
     } else { //Se envia a luces
-        if (t->idSalida[i] == "25.25.25.25") {
-            socketC(ipL, portL, msj);
+        if (t->idSalida[i] == "25.0.7.25") {
+            socketC(ipLuces, portLuces, msj);
         } else { //CASO "DIRECTO"
-            if (redDestino == "165.8") { //Se envia a carritos
-                socketC(ipC, portC, msj);
+            if (redDestino == "201.6") { //Se envia a legos
+                socketC(ipLegos, portLegos, msj);
             } else { //Se envia a luces
-                socketC(ipL, portL, msj);
+                socketC(ipLuces, portLuces, msj);
             }
         }
     }

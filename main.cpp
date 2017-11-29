@@ -5,28 +5,28 @@
 using namespace std;
 
 //Puertos
-//Carritos recibe de Luces en 9090
-//Luces recibe de Carritos en 2626
-//Terminal recibe de RouterCarritos en 20000
-//RouterCarritos recibe de Terminal en 20001
+//Legos recibe de Luces en 2004
+//Luces recibe de Legos en 2005
+//Terminal recibe de RouterLegos en 2003
+//RouterLegos recibe de Terminal en 2002
 
 void interfazLuces() {
-    auto * sL = new Server(20001);
+    auto * sL = new Server(2002);
     sL->socketS();
 }
 
-void interfazCarritos() {
-    auto * sC = new Server(2626);
+void interfazLegos() {
+    auto * sC = new Server(2005);
     sC->socketS();
 }
 
 int main() {
     cout << endl;
 
-    thread hiloL(interfazLuces);
-    thread hiloC(interfazCarritos);
+    thread hiloLuces(interfazLuces);
+    thread hiloLegos(interfazLegos);
 
-    hiloC.join();
-    hiloL.join();
+    hiloLegos.join();
+    hiloLuces.join();
     return 0;
 }

@@ -14,10 +14,10 @@ public:
 
 private:
     Tabla* t;
-    char* ipC;
-    char* ipL;
-    char* portL;
-    char* portC;
+    char* ipLegos;
+    char* ipLuces;
+    char* portLuces;
+    char* portLegos;
 };
 
 #endif //ROUTER_LEGOS_CLIENT_H
