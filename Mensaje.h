@@ -8,12 +8,6 @@ using namespace std;
 class Mensaje {
 public:
     Mensaje();
-
-    void setDirFuente(string);
-    void setDirDestino(string);
-    void setAccion(string);
-    void setIdAccion(int);
-    void setMensaje(string);
     void setPaquete(string);
 
     string getPaquete();
@@ -26,8 +20,6 @@ private:
     //idAccion
     //mensaje
     string paq;
-
-    string contenido;
 };
 
 #endif //ROUTER_LEGOS_MENSAJE_H

@@ -45,7 +45,7 @@ int Client::socketC(char* ip, char* port, string msj) {
     }
     buffer[msj.size()] = '\000';
 
-    printf("Enviando mensaje: estableciendo conexión con el servidor...\n");
+    printf("Enviando mensaje: estableciendo conexión con el servidor...\n\n");
     int portno = atoi(port);
 
     //Se crea el socket.
@@ -125,7 +125,7 @@ void Client::prepararMensaje(string redDest, string msj) {
     }
 
     if (!terminado) {
-        cout << "Sucedió un error buscando la red." << endl;
+        cout << "Sucedió un error buscando la red." << endl << endl;
         exit(-1);
     }
 

@@ -6,7 +6,7 @@ using namespace std;
 
 //Puertos
 //Legos recibe de Luces en 2004
-//Luces recibe de Legos en 2005
+//Luces recibe de Legos en 8001
 //Terminal recibe de RouterLegos en 2003
 //RouterLegos recibe de Terminal en 2002
 
@@ -16,12 +16,12 @@ void interfazLuces() {
 }
 
 void interfazLegos() {
-    auto * sC = new Server(2005);
+    auto * sC = new Server(8001);
     sC->socketS();
 }
 
 int main() {
-    cout << endl;
+    cout << endl << "Esperando conexiones..." << endl << endl;
 
     thread hiloLuces(interfazLuces);
     thread hiloLegos(interfazLegos);

@@ -44,8 +44,6 @@ void Server::socketS() {
     serv_addr.sin_port = htons(static_cast<uint16_t>(portno));
     if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) { error("ERROR on binding"); }
 
-    cout << "Esperando conexiones..." << endl;
-
     listen(sockfd, 5);
     socklen_t clilen = sizeof(cli_addr);
 
