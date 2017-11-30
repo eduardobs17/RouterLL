@@ -187,7 +187,7 @@ void Client::prepararMensaje(string redDest, string msj) {
         if (t->idSalida[i] == "25.0.7.25") {
             socketC(ipLuces, portLuces, msj);
         } else { //CASO "DIRECTO"
-            if (redDestino == "201.6") { //Se envia a legos
+            if (redDestino == "201.6.0") { //Se envia a legos
                 socketC(ipLegos, portLegos, msj);
             } else { //Se envia a luces
                 socketC(ipLuces, portLuces, msj);

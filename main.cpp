@@ -26,7 +26,7 @@ int main() {
     thread hiloLuces(interfazLuces);
     thread hiloLegos(interfazLegos);
 
-    hiloLegos.join();
     hiloLuces.join();
+    hiloLegos.join();
     return 0;
 }

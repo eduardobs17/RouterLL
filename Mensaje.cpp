@@ -13,7 +13,7 @@ Mensaje::Mensaje() {
  * @param tipo El tipo de paquete recibido. 1 => luces. 2 => carritos
  */
 void Mensaje::setPaquete(string p) {
-    paq = p;
+    paq = p + "\n";
 }
 
 /** Divide la información del paquete. */

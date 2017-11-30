@@ -50,11 +50,12 @@ void Server::socketS() {
     while (true) {
         newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
         if (newsockfd < 0) { error("ERROR on accept"); }
+        analizarPaquete(newsockfd);
         pid = fork();
         if (pid < 0) { error("ERROR on fork"); }
         if (pid == 0)  {
             close(sockfd);
-            analizarPaquete(newsockfd);
+            //analizarPaquete(newsockfd);
             exit(0);
         } else {
             close(newsockfd);
